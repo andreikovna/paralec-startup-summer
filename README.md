@@ -1,2 +1,2 @@
-# paralec-startup-summer
+# paralect-startup-summer
 test task
