@@ -1,24 +1,20 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
+import { Header } from './components/Header/Header';
+import { MainPage } from './pages/MainPage/MainPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route index element={<MainPage />}></Route>
+        {/* <Route path="/:userID" element={<User/>}></Route>
+        <Route path="*" element={<Notfound404 />}></Route> */}
+      </Routes>
+    </>
   );
 }
 
