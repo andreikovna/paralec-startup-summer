@@ -45,6 +45,7 @@ const userSlice = createSlice({
       state.followers = payload.followers;
       state.following = payload.following;
       state.public_repos = payload.public_repos;
+      state.loading = true;
     }),
       builder.addCase(fetchUser.rejected, (state) => {
         state.name = defaultUserState.name;
