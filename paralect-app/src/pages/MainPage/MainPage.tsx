@@ -1,9 +1,10 @@
 import React from 'react';
 import { useAppSelector } from '../../redux/store';
-import { InitialState } from './InitialState/InitialState';
+import { InitialState } from '../../components/InitialState/InitialState';
+import { UserData } from '../../components/UserData/UserData';
 
 export function MainPage() {
-  const { loading } = useAppSelector((state) => state);
+  const { statusLoading } = useAppSelector((state) => state);
 
-  return <>{loading ? <p>DATA received</p> : <InitialState />}</>;
+  return <>{statusLoading ? <UserData /> : <InitialState />}</>;
 }

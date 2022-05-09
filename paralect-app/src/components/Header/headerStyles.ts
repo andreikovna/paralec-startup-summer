@@ -5,4 +5,5 @@ export const DivHeader = styled.div`
   background: #0064eb;
   display: flex;
   align-items: center;
+  z-index: 100;
 `;

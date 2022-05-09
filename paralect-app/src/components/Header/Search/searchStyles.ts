@@ -25,6 +25,8 @@ export const SpanSearch = styled.span`
 `;
 
 export const InputSearch = styled.input`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   letter-spacing: 0.01em;

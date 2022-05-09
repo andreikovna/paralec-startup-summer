@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import search from '../../../assets/search.svg';
+import search from '../../assets/search.svg';
 
 export const Div = styled.div`
   width: 100%;
