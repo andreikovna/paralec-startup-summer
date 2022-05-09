@@ -1,14 +1,16 @@
 import React from 'react';
-import { fetchUser, newSearch, setLoading } from '../../../redux/reducer';
+import { fetchUser, newSearch, setLoading } from '../../../redux/user/reducer';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
 import { DivSearch, InputSearch, SpanSearch } from './searchStyles';
+import { fetchRepo } from '../../../redux/repos/reducer';
 
 export function Search() {
   const dispatch = useAppDispatch();
-  const searchValue = useAppSelector((state) => state.searchValue);
+  const searchValue = useAppSelector((state) => state.userReducer.searchValue);
 
   async function loadData() {
     dispatch(fetchUser(searchValue));
+    dispatch(fetchRepo({ username: searchValue, page: 1 }));
     setTimeout(() => {
       setLoading(true);
     }, 1000);

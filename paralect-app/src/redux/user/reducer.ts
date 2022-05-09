@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { PayloadFetchingType, UserState } from './types';
+import { PayloadFetchingType, UserState } from '../types';
 
 const defaultUserState: UserState = {
   searchValue: '',
@@ -21,7 +21,6 @@ export const fetchUser = createAsyncThunk(
     const url = `https://api.github.com/users/${username}`;
     try {
       const response = await axios.get(url);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
@@ -63,5 +62,5 @@ const userSlice = createSlice({
   },
 });
 
-export const UserReducer = userSlice.reducer;
+export const userReducer = userSlice.reducer;
 export const { newSearch, setLoading } = userSlice.actions;

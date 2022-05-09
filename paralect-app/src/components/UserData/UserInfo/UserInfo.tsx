@@ -14,7 +14,7 @@ import {
 
 export function UserInfo() {
   const { avatar_url, name, login, followers, following, html_url } = useAppSelector(
-    (state) => state
+    (state) => state.userReducer
   );
 
   const followersUA = followers > 1000 ? `${(followers / 1000).toFixed(1)}k` : `${followers}`;

@@ -23,4 +23,23 @@ export type PayloadFetchingType = {
   html_url: string;
 };
 
+export type RepoStateType = {
+  repos: {
+    name: string;
+    description: string;
+    html_url: string;
+  }[];
+};
+
+export type PayloadFetchingRepoType = {
+  name: string;
+  description: string;
+  html_url: string;
+};
+
 export type AppDispatch = typeof store.dispatch;
+
+export type RootReducerState = {
+  userReducer: UserState;
+  repoReducer: RepoStateType;
+};
