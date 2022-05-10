@@ -4,15 +4,9 @@ import { PayloadFetchingType, UserState } from '../types';
 
 const defaultUserState: UserState = {
   searchValue: '',
-  name: '',
-  login: '',
-  followers: 0,
-  following: 0,
-  public_repos: 0,
-  avatar_url: '',
-  statusLoading: null,
+  user: null,
+  statusLoaded: null,
   error: null,
-  html_url: '',
 };
 
 export const fetchUser = createAsyncThunk(
@@ -36,28 +30,24 @@ const userSlice = createSlice({
       state.searchValue = payload;
     },
     setLoading(state, { payload }: { payload: boolean }) {
-      state.statusLoading = payload;
+      state.statusLoaded = payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUser.pending, (state) => {
       state.error = null;
-      state.statusLoading = true;
+      state.statusLoaded = false;
     }),
       builder.addCase(
         fetchUser.fulfilled,
         (state, { payload }: { payload: PayloadFetchingType }) => {
-          state.name = payload.name;
-          state.login = payload.login;
-          state.avatar_url = payload.avatar_url;
-          state.followers = payload.followers;
-          state.following = payload.following;
-          state.public_repos = payload.public_repos;
-          state.html_url = payload.html_url;
+          state.user = payload;
+          state.statusLoaded = true;
         }
       ),
       builder.addCase(fetchUser.rejected, (state) => {
-        state.name = defaultUserState.name;
+        state.user = null;
+        state.error = 'not found';
       });
   },
 });

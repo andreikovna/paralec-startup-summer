@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useAppSelector } from '../../../redux/store';
+import { UserType } from '../../../redux/types';
 import { Pagination } from '../Pagination/Pagination';
 import {
   WrapperReposData,
@@ -11,7 +12,7 @@ import {
 } from './repositoriesData.styled';
 
 export function RepositoriesData() {
-  const { public_repos } = useAppSelector((state) => state.userReducer);
+  const { public_repos } = useAppSelector((state) => state.userReducer.user as UserType);
   const repos = useAppSelector((state) => state.repoReducer.repos);
 
   console.log('repos', repos);

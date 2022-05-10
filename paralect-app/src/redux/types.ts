@@ -2,14 +2,18 @@ import { store } from './store';
 
 export type UserState = {
   searchValue: string;
+  statusLoaded: null | boolean;
+  error: null | string;
+  user: UserType | null;
+};
+
+export type UserType = {
   name: string;
   login: string;
   followers: number;
   following: number;
   public_repos: number;
   avatar_url: string;
-  statusLoading: null | boolean;
-  error: null | string;
   html_url: string;
 };
 

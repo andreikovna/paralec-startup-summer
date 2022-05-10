@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppSelector } from '../../../redux/store';
+import { UserType } from '../../../redux/types';
 
 import {
   DivUser,
@@ -10,12 +11,11 @@ import {
   ImgFollowers,
   ImgFollowing,
   FollowersWrappers,
-} from './userInf.styled';
+} from './userInfo.styled';
 
 export function UserInfo() {
-  const { avatar_url, name, login, followers, following, html_url } = useAppSelector(
-    (state) => state.userReducer
-  );
+  const { user } = useAppSelector((state) => state.userReducer);
+  const { name, login, followers, following, avatar_url, html_url } = user as UserType;
 
   const followersUA = followers > 1000 ? `${(followers / 1000).toFixed(1)}k` : `${followers}`;
   const followingsUA = following > 1000 ? `${(following / 1000).toFixed(1)}k` : `${following}`;
