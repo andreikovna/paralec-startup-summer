@@ -3,7 +3,6 @@ import { store } from './store';
 export type UserState = {
   searchValue: string;
   statusLoaded: null | boolean;
-  error: null | string;
   user: UserType | null;
 };
 

@@ -4,9 +4,24 @@ import { useAppSelector } from '../../redux/store';
 import { InitialState } from '../../components/InitialState/InitialState';
 import { UserData } from '../../components/UserData/UserData';
 import { UserNotFound } from '../../components/UserNotFound/UserNotFound';
+import { Spinner } from '../../components/Spinner/Spinner';
 
 export function MainPage() {
-  const { statusLoaded, error } = useAppSelector((state) => state.userReducer);
+  const { statusLoaded, user } = useAppSelector((state) => state.userReducer);
 
-  return <>{error ? <UserNotFound /> : statusLoaded ? <UserData /> : <InitialState />}</>;
+  return (
+    <>
+      {statusLoaded === null ? (
+        <InitialState />
+      ) : statusLoaded ? (
+        user ? (
+          <UserData />
+        ) : (
+          <UserNotFound />
+        )
+      ) : (
+        <Spinner />
+      )}
+    </>
+  );
 }

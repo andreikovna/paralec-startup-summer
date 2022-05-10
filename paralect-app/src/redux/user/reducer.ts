@@ -6,7 +6,6 @@ const defaultUserState: UserState = {
   searchValue: '',
   user: null,
   statusLoaded: null,
-  error: null,
 };
 
 export const fetchUser = createAsyncThunk(
@@ -29,13 +28,9 @@ const userSlice = createSlice({
     newSearch(state, { payload }: { payload: string }) {
       state.searchValue = payload;
     },
-    setLoading(state, { payload }: { payload: boolean }) {
-      state.statusLoaded = payload;
-    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUser.pending, (state) => {
-      state.error = null;
       state.statusLoaded = false;
     }),
       builder.addCase(
@@ -47,10 +42,10 @@ const userSlice = createSlice({
       ),
       builder.addCase(fetchUser.rejected, (state) => {
         state.user = null;
-        state.error = 'not found';
+        state.statusLoaded = true;
       });
   },
 });
 
 export const userReducer = userSlice.reducer;
-export const { newSearch, setLoading } = userSlice.actions;
+export const { newSearch } = userSlice.actions;
