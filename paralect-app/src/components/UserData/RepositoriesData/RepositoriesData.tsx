@@ -7,7 +7,8 @@ import {
   TitleNumberRepo,
   WrapperRepo,
   NameRepoLink,
-} from './repositoriesDataStyles';
+  DescriptionRepo,
+} from './repositoriesData.styled';
 
 export function RepositoriesData() {
   const { public_repos } = useAppSelector((state) => state.userReducer);
@@ -25,7 +26,7 @@ export function RepositoriesData() {
               <NameRepoLink href={repo.html_url} target="_blank" key={index}>
                 {repo.name}
               </NameRepoLink>
-              <p key={index}>{repo.description}</p>
+              <DescriptionRepo key={index}>{repo.description}</DescriptionRepo>
             </WrapperRepo>
           );
         })}

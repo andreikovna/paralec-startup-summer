@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search } from './Search/Search';
-import { DivHeader } from './headerStyles';
+import { DivHeader } from './header.styled';
 import { Logo } from './Logo/Logo';
 
 export function Header() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchUser, newSearch, setLoading } from '../../../redux/user/reducer';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { DivSearch, InputSearch, SpanSearch } from './searchStyles';
+import { DivSearch, InputSearch, SpanSearch } from './search.styled';
 import { fetchRepo } from '../../../redux/repos/reducer';
 
 export function Search() {

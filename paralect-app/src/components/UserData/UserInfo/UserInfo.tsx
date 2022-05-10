@@ -10,7 +10,7 @@ import {
   ImgFollowers,
   ImgFollowing,
   FollowersWrappers,
-} from './userInfoStyles';
+} from './userInf.styled';
 
 export function UserInfo() {
   const { avatar_url, name, login, followers, following, html_url } = useAppSelector(

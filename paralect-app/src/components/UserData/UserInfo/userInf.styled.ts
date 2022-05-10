@@ -5,6 +5,7 @@ import followers from '../../../assets/followers.svg';
 
 export const DivUser = styled.div`
   width: 23.3%;
+  padding-top: 12px;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@ export const DivUser = styled.div`
 
 export const ImgUser = styled.img`
   width: 98%;
+  max-width: 280px;
   border-radius: 50%;
 `;
 

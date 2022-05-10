@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentDiv, Div, DivImageSearch } from './initialStateStyles';
+import { ContentDiv, Div, DivImageSearch } from './initialState.styled';
 
 export function InitialState() {
   return (
