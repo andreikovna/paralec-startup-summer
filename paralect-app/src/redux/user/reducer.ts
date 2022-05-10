@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { PayloadFetchingType, UserState } from '../types';
+import { UserState } from '../types';
 
 const defaultUserState: UserState = {
   searchValue: '',
@@ -33,13 +33,10 @@ const userSlice = createSlice({
     builder.addCase(fetchUser.pending, (state) => {
       state.statusLoaded = false;
     }),
-      builder.addCase(
-        fetchUser.fulfilled,
-        (state, { payload }: { payload: PayloadFetchingType }) => {
-          state.user = payload;
-          state.statusLoaded = true;
-        }
-      ),
+      builder.addCase(fetchUser.fulfilled, (state, { payload }) => {
+        state.user = payload;
+        state.statusLoaded = true;
+      }),
       builder.addCase(fetchUser.rejected, (state) => {
         state.user = null;
         state.statusLoaded = true;

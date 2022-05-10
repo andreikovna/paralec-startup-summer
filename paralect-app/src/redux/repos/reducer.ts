@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { PayloadFetchingRepoType, RepoStateType } from '../types';
+import { RepoStateType } from '../types';
 
 const defaultRepos: RepoStateType = {
   repos: [],
@@ -24,12 +24,9 @@ const userRepoSlice = createSlice({
   initialState: defaultRepos,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(
-      fetchRepo.fulfilled,
-      (state, { payload }: { payload: PayloadFetchingRepoType[] }) => {
-        state.repos = payload;
-      }
-    );
+    builder.addCase(fetchRepo.fulfilled, (state, { payload }) => {
+      state.repos = payload;
+    });
   },
 });
 

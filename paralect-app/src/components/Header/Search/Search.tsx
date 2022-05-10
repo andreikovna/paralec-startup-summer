@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { fetchUser, newSearch } from '../../../redux/user/reducer';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
 import { DivSearch, InputSearch, SpanSearch } from './search.styled';
@@ -6,7 +7,7 @@ import { fetchRepo } from '../../../redux/repos/reducer';
 
 export function Search() {
   const dispatch = useAppDispatch();
-  const searchValue = useAppSelector((state) => state.userReducer.searchValue);
+  const { searchValue } = useAppSelector((state) => state.userReducer);
 
   async function loadData() {
     dispatch(fetchUser(searchValue));

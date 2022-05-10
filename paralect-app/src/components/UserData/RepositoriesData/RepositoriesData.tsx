@@ -13,9 +13,7 @@ import {
 
 export function RepositoriesData() {
   const { public_repos } = useAppSelector((state) => state.userReducer.user as UserType);
-  const repos = useAppSelector((state) => state.repoReducer.repos);
-
-  console.log('repos', repos);
+  const { repos } = useAppSelector((state) => state.repoReducer);
 
   return (
     <WrapperReposData>

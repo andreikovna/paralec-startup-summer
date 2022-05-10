@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { RepositoriesData } from './RepositoriesData/RepositoriesData';
 import { DivData } from './userData.styled';
 import { UserInfo } from './UserInfo/UserInfo';

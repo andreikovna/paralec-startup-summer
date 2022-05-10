@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ContentDiv, Div, DivImageUser } from './userNotFound.styled';
 
 export function UserNotFound() {
