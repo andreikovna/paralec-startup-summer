@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import { DivApp } from './app.styled';
@@ -10,10 +9,7 @@ function App() {
   return (
     <DivApp>
       <Header />
-      <Routes>
-        <Route index element={<MainPage />}></Route>
-        {/* <Route path="*" element={<Notfound404 />}></Route> */}
-      </Routes>
+      <MainPage />
     </DivApp>
   );
 }

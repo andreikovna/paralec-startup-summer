@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import search from '../../assets/search.svg';
 
-export const Div = styled.div`
+export const WrapperDiv = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -18,7 +18,7 @@ export const Div = styled.div`
 export const ContentDiv = styled.div`
   display: flex;
   justify-content: center;
-  width: 15.38%;
+  width: 210px;
   flex-direction: column;
   & p {
     font-family: Inter;

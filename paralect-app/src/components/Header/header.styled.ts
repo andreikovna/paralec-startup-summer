@@ -2,12 +2,18 @@ import styled from 'styled-components';
 
 import logo from '../../assets/GH_logo.svg';
 
-export const DivHeader = styled.div`
+export const WrapperHeader = styled.div`
   height: 72px;
   background: #0064eb;
+  z-index: 100;
+`;
+
+export const ContentHeader = styled.div`
+  max-width: 1366px;
+  height: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  z-index: 100;
 `;
 
 export const DivLogo = styled.div`

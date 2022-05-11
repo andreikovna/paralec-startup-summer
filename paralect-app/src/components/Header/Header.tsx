@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { Search } from './Search/Search';
-import { DivHeader, DivLogo } from './header.styled';
+import { WrapperHeader, ContentHeader, DivLogo } from './header.styled';
 
 export function Header() {
   return (
-    <DivHeader>
-      <DivLogo />
-      <Search />
-    </DivHeader>
+    <WrapperHeader>
+      <ContentHeader>
+        <DivLogo />
+        <Search />
+      </ContentHeader>
+    </WrapperHeader>
   );
 }

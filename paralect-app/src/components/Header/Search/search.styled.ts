@@ -31,6 +31,7 @@ export const InputSearch = styled.input`
   align-items: center;
   letter-spacing: 0.01em;
   color: #000000;
+  background: none;
   line-height: 17px;
   font-style: normal;
   font-weight: 400;
