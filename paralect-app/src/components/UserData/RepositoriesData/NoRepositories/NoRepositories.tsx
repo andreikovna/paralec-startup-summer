@@ -1,5 +1,10 @@
-import React from 'react';
+import { ImgDiv, WrapperNoRepositories } from './noRepositories.styles';
 
 export const NoRepositories = () => {
-  return <p>YTN</p>;
+  return (
+    <WrapperNoRepositories>
+      <ImgDiv></ImgDiv>
+      <p>Repository list is empty</p>
+    </WrapperNoRepositories>
+  );
 };
