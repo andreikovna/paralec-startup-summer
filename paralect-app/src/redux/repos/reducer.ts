@@ -9,7 +9,7 @@ const defaultRepos: RepoStateType = {
 export const fetchRepo = createAsyncThunk(
   'repoReducer/fetchRepo',
   async ({ username, page }: { username: string; page: number }, { rejectWithValue }) => {
-    const url = `https://api.github.com/users/${username}/repos?q=&per_page=4&sort=updated&page=${page}`;
+    const url = `https://api.github.com/users/${username}/repos?q=&sort=pushed&per_page=4&page=${page}`;
     try {
       const response = await axios.get(url);
       return response.data;

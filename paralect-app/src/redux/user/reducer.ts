@@ -3,6 +3,7 @@ import axios from 'axios';
 import { UserState } from '../types';
 
 const defaultUserState: UserState = {
+  page: 1,
   searchValue: '',
   user: null,
   statusLoaded: null,
@@ -28,6 +29,9 @@ const userSlice = createSlice({
     newSearch(state, { payload }: { payload: string }) {
       state.searchValue = payload;
     },
+    setPage(state, { payload }: { payload: number }) {
+      state.page = payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUser.pending, (state) => {
@@ -45,4 +49,4 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
-export const { newSearch } = userSlice.actions;
+export const { newSearch, setPage } = userSlice.actions;
