@@ -10,7 +10,6 @@ const ldsSpinner = keyframes`
 `;
 
 export const DivSpinner = styled.div`
-  color: official;
   position: relative;
   margin: 50px auto;
   width: 80px;

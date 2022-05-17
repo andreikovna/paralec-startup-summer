@@ -11,6 +11,9 @@ export const DivSearch = styled.div`
   align-items: center;
   border-radius: 6px;
   border: none;
+  @media screen and (max-width: 700px) {
+    width: 70%;
+  }
 `;
 
 export const SpanSearch = styled.span`

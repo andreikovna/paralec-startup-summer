@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import user from '../../assets/user.svg';
+import { BACKGROUND_COLOR } from '../../appConstants/constants';
 
 export const Div = styled.div`
   width: 100%;
@@ -13,6 +14,7 @@ export const Div = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
+  background-color: ${BACKGROUND_COLOR};
 `;
 
 export const ContentDiv = styled.div`

@@ -1,23 +1,25 @@
 import styled from 'styled-components';
 
-export const TitleNumberRepo = styled.h1`
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 130%;
-  margin-bottom: 17px;
-`;
-
 export const WrapperRepo = styled.div`
-  height: 112px;
+  max-width: 877px;
+  min-width: 550px;
+  /* height: 100%; */
+  min-height: 112px;
   padding: 24px 32px;
-  margin: 12px 0;
   background: #ffffff;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 1024px) {
+    min-height: 90px;
+    padding: 14px 22px;
+  }
+  @media screen and (max-width: 768px) {
+    min-width: 260px;
+    min-height: 80px;
+    padding: 10px 10px;
+  }
 `;
 
 export const NameRepoLink = styled.a`
@@ -27,6 +29,16 @@ export const NameRepoLink = styled.a`
   font-size: 24px;
   line-height: 29px;
   color: #0064eb;
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  @media screen and (max-width: 520px) {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const DescriptionRepo = styled.p`
@@ -35,4 +47,13 @@ export const DescriptionRepo = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  @media screen and (max-width: 520px) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;

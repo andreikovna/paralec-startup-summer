@@ -7,7 +7,7 @@ import next from '../../../../assets/next-arrow.svg';
 export const WrapperPagination = styled.div`
   display: flex;
   gap: 16px;
-  margin-top: 14px;
+  margin-right: 13px;
   align-items: center;
   color: #808080;
   font-family: 'Inter';
@@ -16,6 +16,11 @@ export const WrapperPagination = styled.div`
   font-style: normal;
   font-weight: 400;
   justify-content: flex-end;
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 0;
+  }
 `;
 
 export const Paginate = styled(ReactPaginate)`

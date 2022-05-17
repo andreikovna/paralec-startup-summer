@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export const WrapperReposData = styled.div`
+export const WrapperReposData = styled.section`
   display: flex;
-  width: 69.9%;
+  max-width: 877px;
+  flex: 1;
   flex-direction: column;
-  margin-left: 6.2%;
+  gap: 24px;
+  @media screen and (max-width: 1024px) {
+    gap: 10px;
+  }
 `;
 
 export const TitleNumberRepo = styled.h1`
@@ -12,6 +16,15 @@ export const TitleNumberRepo = styled.h1`
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
-  line-height: 130%;
-  margin-bottom: 17px;
+  line-height: 41px;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  @media screen and (max-width: 1024px) {
+    font-size: 28px;
+    line-height: 31px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 22px;
+    line-height: 24px;
+  }
 `;
