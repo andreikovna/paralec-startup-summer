@@ -1,8 +1,10 @@
 import ReactPaginate from 'react-paginate';
 import styled from 'styled-components';
 
-import previous from '../../../../assets/previous-arrow.svg';
-import next from '../../../../assets/next-arrow.svg';
+import previous from '../../../../assets/svg/previous-arrow.svg';
+import next from '../../../../assets/svg/next-arrow.svg';
+import disabledNext from '../../../../assets/svg/disabled-next-arrow.svg';
+import disabledPrevious from '../../../../assets/svg/disabled-previous-arrow.svg';
 
 export const WrapperPagination = styled.div`
   display: flex;
@@ -28,8 +30,9 @@ export const Paginate = styled(ReactPaginate)`
   align-items: center;
   gap: 16px;
   .active {
-    align-items: center;
-    padding: 2px 6px;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
     width: 21px;
     height: 25px;
     background: #0064eb;
@@ -53,5 +56,11 @@ export const Paginate = styled(ReactPaginate)`
   }
   .previous {
     background-image: url(${previous});
+  }
+  .previous.disabled {
+    background-image: url(${disabledPrevious});
+  }
+  .next.disabled {
+    background-image: url(${disabledNext});
   }
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import search from '../../assets/search.svg';
+import search from '../../assets/svg/search.svg';
 import { BACKGROUND_COLOR } from '../../appConstants/constants';
 
 export const WrapperDiv = styled.div`

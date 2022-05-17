@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import followings from '../../../assets/following.svg';
-import followers from '../../../assets/followers.svg';
+import followings from '../../../assets/svg/following.svg';
+import followers from '../../../assets/svg/followers.svg';
 
 export const DivUser = styled.aside`
   padding-top: 12px;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useAppSelector } from '../../../redux/store';
 import { UserType } from '../../../redux/types';
 import {
@@ -17,8 +15,20 @@ export function UserInfo() {
   const { user } = useAppSelector((state) => state.userReducer);
   const { name, login, followers, following, avatar_url, html_url } = user as UserType;
 
-  const followersUA = followers > 1000 ? `${(followers / 1000).toFixed(1)}k` : `${followers}`;
-  const followingsUA = following > 1000 ? `${(following / 1000).toFixed(1)}k` : `${following}`;
+  const userDataInfo = [
+    {
+      id: 0,
+      img: <ImgFollowers />,
+      number: followers > 1000 ? `${(followers / 1000).toFixed(1)}k` : `${followers}`,
+      text: 'followers',
+    },
+    {
+      id: 1,
+      img: <ImgFollowing />,
+      number: following > 1000 ? `${(following / 1000).toFixed(1)}k` : `${following}`,
+      text: 'following',
+    },
+  ];
 
   return (
     <DivUser>
@@ -28,14 +38,16 @@ export function UserInfo() {
         {login}
       </LinkUser>
       <WrapperFollowersInfo>
-        <FollowersWrappers>
-          <ImgFollowers />
-          <p>{followersUA} followers</p>
-        </FollowersWrappers>
-        <FollowersWrappers>
-          <ImgFollowing />
-          <p>{followingsUA} following</p>
-        </FollowersWrappers>
+        {userDataInfo.map((item) => {
+          return (
+            <FollowersWrappers key={item.id}>
+              {item.img}
+              <p>
+                {item.number} {item.text}
+              </p>
+            </FollowersWrappers>
+          );
+        })}
       </WrapperFollowersInfo>
     </DivUser>
   );

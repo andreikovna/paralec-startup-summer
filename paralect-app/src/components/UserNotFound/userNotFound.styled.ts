@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import user from '../../assets/user.svg';
+import user from '../../assets/svg/user.svg';
 import { BACKGROUND_COLOR } from '../../appConstants/constants';
 
 export const Div = styled.div`

@@ -1,23 +1,21 @@
-import React from 'react';
-
-import { fetchUser, newSearch, setPage } from '../../../redux/user/reducer';
+import { fetchUser, newSearch } from '../../../redux/user/reducer';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
 import { DivSearch, InputSearch, SpanSearch } from './search.styled';
-import { fetchRepo } from '../../../redux/repos/reducer';
+import { fetchRepo, setPage } from '../../../redux/repos/reducer';
 import { DEFAULT_PAGE_NUMBER } from '../../../appConstants/constants';
 
 export function Search() {
   const dispatch = useAppDispatch();
-  const { searchValue, page } = useAppSelector((state) => state.userReducer);
+  const { searchValue } = useAppSelector((state) => state.userReducer);
 
   async function loadData() {
-    dispatch(setPage(DEFAULT_PAGE_NUMBER));
     dispatch(fetchUser(searchValue));
-    dispatch(fetchRepo({ username: searchValue, page }));
+    dispatch(fetchRepo({ username: searchValue, page: DEFAULT_PAGE_NUMBER }));
   }
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter') {
+      dispatch(setPage(DEFAULT_PAGE_NUMBER));
       loadData();
     }
   };

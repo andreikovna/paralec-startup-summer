@@ -1,7 +1,6 @@
 import { store } from './store';
 
 export type UserState = {
-  page: number;
   searchValue: string;
   statusLoaded: null | boolean;
   user: UserType | null;
@@ -18,6 +17,7 @@ export type UserType = {
 };
 
 export type RepoStateType = {
+  page: number;
   repos: {
     name: string;
     description: string;

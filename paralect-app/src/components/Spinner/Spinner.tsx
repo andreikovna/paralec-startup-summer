@@ -1,4 +1,3 @@
-import React from 'react';
 import { DivSpinner } from './spinner.styled';
 
 export function Spinner() {

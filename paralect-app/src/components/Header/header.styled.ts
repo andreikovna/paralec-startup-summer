@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import logo from '../../assets/GH_logo.svg';
+import logo from '../../assets/svg/GH_logo.svg';
 
 export const WrapperHeader = styled.header`
   height: 72px;

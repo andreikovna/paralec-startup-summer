@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const WrapperRepo = styled.div`
   max-width: 877px;
   min-width: 550px;
-  /* height: 100%; */
   min-height: 112px;
   padding: 24px 32px;
   background: #ffffff;

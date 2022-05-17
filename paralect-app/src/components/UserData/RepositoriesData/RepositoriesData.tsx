@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useAppSelector } from '../../../redux/store';
 import { UserType } from '../../../redux/types';
 import { NoRepositories } from './NoRepositories/NoRepositories';

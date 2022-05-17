@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import no_repos from '../../../../assets/no_repo.svg';
+import no_repos from '../../../../assets/svg/no_repo.svg';
 
 export const WrapperNoRepositories = styled.div`
   display: flex;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ContentDiv, WrapperDiv, DivImageSearch } from './initialState.styled';
 
 export function InitialState() {

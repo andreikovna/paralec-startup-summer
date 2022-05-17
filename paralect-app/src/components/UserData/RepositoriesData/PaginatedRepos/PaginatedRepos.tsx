@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useAppSelector } from '../../../../redux/store';
 import { DescriptionRepo, NameRepoLink, WrapperRepo } from './paginatedRepos.styled';
 

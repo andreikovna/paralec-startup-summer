@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import search from '../../../assets/search.svg';
+import search from '../../../assets/svg/search.svg';
 
 export const DivSearch = styled.div`
   font-family: 'Inter';
